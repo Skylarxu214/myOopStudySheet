@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        My OOP Study Sheet
+    </h1>
+    <script>
+        class GetterNSetter{
+    constructor(_width){
+        this.width = _width;
+        this.height = _width;
+
+    }
+    get area(){
+        return this.width * this.height
+    }
+    set area(area){
+        this.width = Math.sqrt(area)
+        this.height = this.width +1 
+    }
+}
+
+// let square = new GetterNSetter(3);
+// console.log(square.area)
+// square1.area = 16
+// console.log(square.width)
+// console.log(square.height)
+
+class Square {
+    constructor(_width){
+        this.width = _width 
+        this.height =_width
+    }
+    static equals (a,b){
+        return a.width * a.height === b.width * b.height
+    }
+    static isValidDimensions (width, height){
+        return width === height;
+    }
+}
+
+let square1 = new Square(8)
+let square2 = new Square(8)
+console.log(Square.equals(square1, square2))
+console.log(Square.isValidDimensions(6,6))
+
+class Person {
+    constructor (_name,_age){
+        this.name =_name
+        this.age = _age
+    }
+    describe (){
+        console.log(`I am ${this.name} and I am ${this.age} years old`)
+    }
+}
+
+class Programmer extends Person {
+    constructor (_name, _age, _yearsOfExperience){
+        super(_name, _age);
+
+        // Custom behavior
+        this._yearsOfExperience = _yearsOfExperience
+
+    }
+    code(){
+        console.log(`${this.name} is coding. `)
+    }
+}
+let person1 = new Person('Jeff', 45)
+let programmer1 = new Programmer('Dom', 56, 12)
+console.log(person1)
+console.log(programmer1)
+person1.describe()
+programmer1.code()
+programmer1.describe()
+
+const  programmers = [
+    new Programmer('Tian', 34, 1),
+    new Programmer('Sky', 14, 13)
+]
+
+function developSoftware(programmers){
+    for (let programmer of programmers){
+        // console.log(`This is the function version, and ${programmer.name} is ${programmer.age} years old and code for ${programmer.yearsOfExperience}.`)
+        programmer.code()
+        programmer.describe()
+    }
+    
+
+}
+
+developSoftware(programmers)
+
+class Animal {
+    constructor(_name) {
+        this.name = _name
+
+    }
+    makeSound(){
+        console.log(`${this.name} is making sound!`)
+    }
+}
+
+class Dog extends Animal {
+    constructor(_name){
+        super(_name)
+    }
+    makeSound(){
+        super.makeSound()
+        console.log("Woof! Woof!")
+    }
+}
+
+const a1 = new Animal('Dom')
+a1.makeSound()
+const dog =  new Dog('Sky')
+dog.makeSound()
+    </script>
+</body>
+</html>
