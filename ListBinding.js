@@ -12,16 +12,16 @@ class ListBinding {
     }
     update () {
         /* Remove All Existing <li> Elements/tage*/
-        // while (this.listElement.firstChild){
-        //     this.listElement.removeChild(this.listElement.firstChild)
-        // }
-        let origin  = this.listElement.firstElementChild.textContent
-        this.listElement.removeChild(this.listElement.firstElementChild)
+        while (this.listElement.firstChild){
+            this.listElement.removeChild(this.listElement.firstChild)
+        }
+        // let origin  = this.listElement.firstElementChild.textContent
+        // this.listElement.removeChild(this.listElement.firstElementChild)
         /* Fill <ul>/<ol> tag with<li> */
-        // for (const text of this.textList) {
-        //     this.listElement.appendChild(ListBinding.createListItem(text))
-        // }
-        this.listElement.appendChild(ListBinding.createListItem(this.textList[0]? this.textList:`Removed the child ${origin}`))
+        for (const text of this.textList) {
+            this.listElement.appendChild(ListBinding.createListItem(text))
+        }
+        // this.listElement.appendChild(ListBinding.createListItem(this.textList[0]? this.textList:`Removed the child ${origin}`))
 
     }
 
@@ -33,5 +33,7 @@ class ListBinding {
     remove (index){
         this.textList.splice(index, 1);
         this.update()
+        // this.listElement.splice(index,1)
+        // this.update()
     }
 }
