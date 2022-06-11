@@ -15,13 +15,13 @@ class ListBinding {
         // while (this.listElement.firstChild){
         //     this.listElement.removeChild(this.listElement.firstChild)
         // }
-        let text = this.listElement.firstElementChild.textContent
+        let origin  = this.listElement.firstElementChild.textContent
         this.listElement.removeChild(this.listElement.firstElementChild)
         /* Fill <ul>/<ol> tag with<li> */
         // for (const text of this.textList) {
         //     this.listElement.appendChild(ListBinding.createListItem(text))
         // }
-        this.listElement.appendChild(ListBinding.createListItem(`Removed the child ${text}`))
+        this.listElement.appendChild(ListBinding.createListItem(this.textList[0]? this.textList:`Removed the child ${origin}`))
 
     }
 
