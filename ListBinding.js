@@ -1,9 +1,13 @@
+       
+// const myList = document.getElementById("myList")
+// const listBinding = new ListBinding(myList) 
+
 class ListBinding {
     constructor(element){
         this.listElement = element;
         this.textList = []
     }
-    static createListItem(text) {
+   static createListItem(text) {
         const li = document.createElement("li")
 
         li.textContent = text
