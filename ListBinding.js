@@ -17,7 +17,12 @@ class ListBinding {
     update () {
         /* Remove All Existing <li> Elements/tage*/
         while (this.listElement.firstChild){
+          
+            // this.textList.push(`${this.listElement.firstElementChild.textContent}`)
             this.listElement.removeChild(this.listElement.firstChild)
+
+           
+            
         }
         // let origin  = this.listElement.firstElementChild.textContent
         // this.listElement.removeChild(this.listElement.firstElementChild)
